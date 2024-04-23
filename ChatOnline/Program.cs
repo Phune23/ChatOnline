@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Facebook;
 using Microsoft.AspNetCore.Authentication.Google;
 using ChatOnline.Data;
 using ChatOnline.Hubs;
@@ -20,17 +20,17 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddDefaultUI()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-services.AddAuthentication(options =>
-{
-    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
-})
-.AddCookie()
-.AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
-{
-    options.ClientId = builder.Configuration.GetSection("GoogleKeys:ClientID").Value;
-    options.ClientSecret = builder.Configuration.GetSection("GoogleKeys:ClientSecret").Value;
-});
+//services.AddAuthentication()
+//    .AddFacebook(facebookOptions =>
+//    {
+//        facebookOptions.AppId = "1566279994211061";
+//        facebookOptions.AppSecret = "3039f1628ff89f3da8584ea6a30a58b5"; 
+//    })
+//    .AddGoogle(googleOptions =>
+//     {
+//         googleOptions.ClientId = "39174888650-rr82ad6u2tf52ljrp778b8i3ndpu2ska.apps.googleusercontent.com";
+//         googleOptions.ClientSecret = "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";
+//     });
 // Add services to the container.
 builder.Services.AddRazorPages();
 
