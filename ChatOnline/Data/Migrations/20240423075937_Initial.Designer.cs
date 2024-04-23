@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ChatOnline.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240422153629_Intial")]
-    partial class Intial
+    [Migration("20240423075937_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

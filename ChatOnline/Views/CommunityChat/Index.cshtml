@@ -1,37 +1,51 @@
 ﻿@page
+
 @using Microsoft.AspNetCore.Identity
 @inject UserManager<IdentityUser> UserManager
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
+<div class="row">
+    <div class="col">
+        <h1>Community Chat</h1>
 
-<h1>Index</h1>
-
-<div class="container">
-    <div class="row p-1">
-        <div class="col-1">User</div>
-        <div class="col-5"><input type="text" id="userInput" value="@UserManager.GetUserName(User)" disabled /></div>
-    </div>
-    <div class="row p-1">
-        <div class="col-1">Message</div>
-        <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
-    </div>
-    <div class="row p-1">
-        <div class="col-6 text-end">
-            <input type="button" id="sendButton" value="Send Message" />
+        <div class="container">
+            <div class="row p-1">
+                <div class="col-1">User</div>
+                <div class="col-5"><input type="text" id="userInput" value="@UserManager.GetUserName(User)" disabled />
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-1">Message</div>
+                <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+            </div>
+            <div class="row p-1">
+                <div class="col-6 text-end">
+                    <input type="button" id="sendButton" value="Send Message" />
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-6">
+                    <hr />
+                </div>
+            </div>
+            <div class="row p-1">
+                <h1>Friends List - <span></span></h1>
+                <div class="col-6 ">
+                    <ul id="messagesList"></ul>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row p-1">
-        <div class="col-6">
-            <hr />
-        </div>
-    </div>
-    <div class="row p-1">
-        <div class="col-6">
-            <ul id="messagesList"></ul>
+    <div class="col">
+        <h1>List User</h1>
+        <div class="listUser">
+            <ul id="userList"></ul>
         </div>
     </div>
 </div>
+
 <script src="~/js/signalr/dist/webworker/signalr.js"></script>
 <script src="~/js/signalr/dist/webworker/signalr.min.js"></script>
 <script src="~/js/chat.js"></script>
+<script src="~/js/listuser.js"></script>
