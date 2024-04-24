@@ -8,7 +8,6 @@
 <div class="row">
     <div class="col">
         <h1>Community Chat</h1>
-
         <div class="container">
             <div class="row p-1">
                 <div class="col-1">User</div>
@@ -30,22 +29,21 @@
                 </div>
             </div>
             <div class="row p-1">
-                <h1>Friends List - <span></span></h1>
                 <div class="col-6 ">
-                    <ul id="messagesList"></ul>
+                    <ul class="listOver message" id="messagesList"></ul>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="col">
-        <h1>List User</h1>
-        <div class="listUser">
-            <ul id="userList"></ul>
-        </div>
+        <h1>Danh sách tài khoản</h1>
+        <input class="inputOver" type="text" id="searchInput" placeholder="Tìm kiếm người dùng">
+        <ul class="listOver" id="userList"></ul>
     </div>
 </div>
 
 <script src="~/js/signalr/dist/webworker/signalr.js"></script>
 <script src="~/js/signalr/dist/webworker/signalr.min.js"></script>
 <script src="~/js/chat.js"></script>
-<script src="~/js/listuser.js"></script>
+<script src="~/js/site.js"></script>

@@ -1,8 +1,26 @@
-﻿
+﻿@page
+
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
 @{
-    ViewData["Title"] = "Friends Chat";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Friends Chat</h1>
+<h1>Friends List</h1>
+<div class="row" >
+    <div class="col">
+        <h1>Danh sách tài khoản</h1>
+        <input type="text" id="searchInput" placeholder="Tìm kiếm người dùng">
+        <ul class="listOver friend" id="accountList"></ul>
+    </div>
+    <div class="col">
+        <h2>Danh sách bạn bè</h2>
+        <input type="text" id="friendSearchInput" placeholder="Tìm kiếm người dùng">
+        <ul class="listOver friend" id="friendList"></ul>
+    </div>
+</div>
+
+<script src="~/js/accountlist.js"></script>
+<script src="~/js/friendlist.js"></script>
+<script src="~/js/site.js"></script>
 
